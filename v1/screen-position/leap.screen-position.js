@@ -27,10 +27,10 @@ More info on vec3 can be found, here: http://glmatrix.net/docs/2.2.0/symbols/vec
 */
 
 
-(function() {
+(function () {
   var screenPosition;
 
-  screenPosition = function(options) {
+  screenPosition = function (options) {
     var baseScale, baseVerticalOffset, position, positioningMethods;
     if (options == null) {
       options = {};
@@ -44,11 +44,11 @@ More info on vec3 can be found, here: http://glmatrix.net/docs/2.2.0/symbols/vec
     baseScale = 6;
     baseVerticalOffset = -100;
     positioningMethods = {
-      absolute: function(positionVec3) {
+      absolute: function (positionVec3) {
         return [(window.innerWidth / 2) + (positionVec3[0] * baseScale * options.scale * options.scaleX), window.innerHeight + baseVerticalOffset + options.verticalOffset - (positionVec3[1] * baseScale * options.scale * options.scaleY), positionVec3[2] * baseScale * options.scale * options.scaleZ];
       }
     };
-    position = function(vec3, memoize) {
+    position = function (vec3, memoize) {
       var screenPositionVec3;
       if (memoize == null) {
         memoize = false;
@@ -61,12 +61,12 @@ More info on vec3 can be found, here: http://glmatrix.net/docs/2.2.0/symbols/vec
     };
     return {
       hand: {
-        screenPosition: function(vec3) {
+        screenPosition: function (vec3) {
           return position.call(this, vec3 || this.stabilizedPalmPosition, !vec3);
         }
       },
       pointable: {
-        screenPosition: function(vec3) {
+        screenPosition: function (vec3) {
           return position.call(this, vec3 || this.stabilizedTipPosition, !vec3);
         }
       }
@@ -80,5 +80,6 @@ More info on vec3 can be found, here: http://glmatrix.net/docs/2.2.0/symbols/vec
   } else {
     throw 'leap.js not included';
   }
+  var a = 12;
 
 }).call(this);
