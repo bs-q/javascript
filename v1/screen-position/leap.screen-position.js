@@ -81,5 +81,5 @@ More info on vec3 can be found, here: http://glmatrix.net/docs/2.2.0/symbols/vec
     throw 'leap.js not included';
   }
   var a = 12;
-
+  var c = a;
 }).call(this);
